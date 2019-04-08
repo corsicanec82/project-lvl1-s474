@@ -7,3 +7,6 @@ start:
 publish:
 	npm login
 	npm publish
+
+lint:
+	npx eslint .
