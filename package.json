@@ -1,6 +1,6 @@
 {
   "name": "sb-game",
-  "version": "1.0.6",
+  "version": "1.1.1",
   "description": "Simple brain game",
   "main": "",
   "keywords": [
@@ -16,7 +16,8 @@
   ],
   "scripts": {
     "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "watch": "babel src --out-dir dist --source-maps inline --watch"
   },
   "repository": {
     "type": "git",
@@ -28,7 +29,9 @@
     "url": "https://github.com/corsicanec82/project-lvl1-s474/issues"
   },
   "homepage": "https://github.com/corsicanec82/project-lvl1-s474#readme",
-  "dependencies": {},
+  "dependencies": {
+    "readline-sync": "^1.4.9"
+  },
   "devDependencies": {
     "@babel/cli": "^7.4.3",
     "@babel/core": "^7.4.3",

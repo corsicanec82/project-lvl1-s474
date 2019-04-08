@@ -1,3 +1,6 @@
 #!/bin/env node
 
-console.log('Welcome to the Brain Games!');
+import sayHello from '..';
+
+console.log('Welcome to the Brain Games!\n');
+sayHello();
