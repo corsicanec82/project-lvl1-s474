@@ -1,8 +1,13 @@
 {
   "name": "sb-game",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Simple brain game",
-  "main": "index.js",
+  "main": "",
+  "keywords": [
+    "simple",
+    "brain",
+    "game"
+  ],
   "bin": {
     "brain-games": "dist/bin/brain-games.js"
   },
@@ -28,6 +33,9 @@
     "@babel/cli": "^7.4.3",
     "@babel/core": "^7.4.3",
     "@babel/node": "^7.2.2",
-    "@babel/preset-env": "^7.4.3"
+    "@babel/preset-env": "^7.4.3",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0"
   }
 }
