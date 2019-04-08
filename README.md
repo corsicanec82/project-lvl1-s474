@@ -1,12 +1,7 @@
-# brain game project
+# Brain game project
 *simple brain game*
 
-## setup
+## Install
 ```sh
-$ make install
-```
-
-## run
-```sh
-$ make start
+$ sudo npm install -g sb-game
 ```
