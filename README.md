@@ -9,3 +9,5 @@
 ```sh
 $ sudo npm install -g sb-game
 ```
+
+[![asciicast](https://asciinema.org/a/BaAKfZOz3RhZmm7iHKkwxLPkV.svg)](https://asciinema.org/a/BaAKfZOz3RhZmm7iHKkwxLPkV)
