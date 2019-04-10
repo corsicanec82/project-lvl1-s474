@@ -1,74 +1,51 @@
 import readlineSync from 'readline-sync';
+import * as GameEven from './games/even';
+import * as GameCalc from './games/calc';
+import * as GameDefault from './games/default';
 
-// greets the user and returns his name
-const greetUser = (gameConditions = '') => {
+const chooseGame = (gameName) => {
+  switch (gameName) {
+    case 'calc':
+      return GameCalc;
+    case 'even':
+      return GameEven;
+    default:
+      return GameDefault;
+  }
+};
+
+export default (gameName = '') => {
+  const Game = chooseGame(gameName);
+
   console.log('Welcome to the Brain Games!');
-  console.log(gameConditions);
-
+  console.log(Game.getGameConditions());
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
 
-  return userName;
-};
-
-// shows goodbye to the user
-const byeUser = (userName) => {
-  console.log(`\nCongratulations, ${userName}!`);
-};
-
-// asks a question to the user and returns the answer
-const askQuestion = (question) => {
-  console.log(`\nQuestion: ${question}`);
-  const answer = readlineSync.question('Your answer: ');
-  return answer;
-};
-
-// reports the result of the response to the user
-const reportResult = (result, userName, answer, correctAnswer) => {
-  if (result) {
-    console.log('Correct!');
+  if (gameName === '') {
     return;
   }
-  console.log(`'${answer}' is wrong answer :(. Correct answer was '${correctAnswer}'.`);
-  console.log(`Let's try again, ${userName}!`);
-};
-
-// returns a random two-digit number
-const getRandom = () => {
-  const min = 10;
-  const max = 99;
-  return Math.floor(Math.random() * (max - min)) + min;
-};
-
-// returns true if the number is even
-const isEven = number => number % 2 === 0;
-
-// processes the result of the brain-even game
-const getEvenResult = (number, answer, userName) => {
-  const correctAnswer = isEven(number) ? 'yes' : 'no';
-  const result = answer === correctAnswer;
-  reportResult(result, userName, answer, correctAnswer);
-  return result;
-};
-
-// run brain-games
-export const runBrainGames = () => greetUser();
-
-// run brain-even game
-export const runBrainEven = () => {
-  const userName = greetUser('Answer "yes" if number even otherwise answer "no".\n');
 
   const numberOfQuestions = 3;
-  let randomNumber;
+  let question;
   let answer;
+  let correctAnswer;
 
   for (let i = 0; i < numberOfQuestions; i += 1) {
-    randomNumber = getRandom();
-    answer = askQuestion(randomNumber);
-    if (!getEvenResult(randomNumber, answer, userName)) {
+    question = Game.getQuestion();
+    correctAnswer = Game.getCorrectAnswer(question);
+
+    console.log(`\nQuestion: ${question}`);
+    answer = readlineSync.question('Your answer: ');
+
+    if (answer === correctAnswer) {
+      console.log('Correct!');
+    } else {
+      console.log(`'${answer}' is wrong answer :(. Correct answer was '${correctAnswer}'.`);
+      console.log(`Let's try again, ${userName}!`);
       return;
     }
   }
 
-  byeUser(userName);
+  console.log(`\nCongratulations, ${userName}!`);
 };
