@@ -23,3 +23,9 @@ $ brain-calc
 ```
 
 [![asciicast](https://asciinema.org/a/ZUCHC64QcRzcdftbdPzHHMJ8G.svg)](https://asciinema.org/a/ZUCHC64QcRzcdftbdPzHHMJ8G)
+### Run game - Find GCD
+```sh
+$ brain-gcd
+```
+
+[![asciicast](https://asciinema.org/a/RE7q4iOWu7WT1d0ltuUfPzjcQ.svg)](https://asciinema.org/a/RE7q4iOWu7WT1d0ltuUfPzjcQ)

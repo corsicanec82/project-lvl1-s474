@@ -1,3 +1,7 @@
-export const getGameConditions = () => '';
+import runGameEngine from '..';
 
-export default getGameConditions;
+const getGameConditions = () => '';
+
+export default () => {
+  runGameEngine(getGameConditions);
+};
