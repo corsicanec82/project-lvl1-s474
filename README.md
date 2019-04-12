@@ -35,3 +35,9 @@ $ brain-progression
 ```
 
 [![asciicast](https://asciinema.org/a/D5dzuvgUn4TqxhfJVtvFt4NUN.svg)](https://asciinema.org/a/D5dzuvgUn4TqxhfJVtvFt4NUN)
+### Run game - Prime
+```sh
+$ brain-prime
+```
+
+[![asciicast](https://asciinema.org/a/1C7ry89ykUn52hKVAea7Hcncp.svg)](https://asciinema.org/a/1C7ry89ykUn52hKVAea7Hcncp)
