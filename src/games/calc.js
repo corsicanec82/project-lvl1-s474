@@ -1,36 +1,33 @@
-import runGameEngine from '..';
+import * as GameEngine from '..';
 import getRandom from '../utils';
 
-const getGameConditions = () => 'What is the result of the expression?\n';
+const gameConditions = 'What is the result of the expression?\n';
 
 const operations = '+-*';
 
-const getQuestion = () => {
+const setAnswerQuestion = () => {
   const num1 = getRandom(1, 25);
   const num2 = getRandom(1, 25);
   const operationNum = getRandom(0, operations.length);
+  const question = `${num1} ${operations[operationNum]} ${num2}`;
 
-  return `${num1} ${operations[operationNum]} ${num2}`;
-};
-
-const getCorrectAnswer = (expression) => {
-  const elements = expression.split(' ');
-  const num1 = Number(elements[0]);
-  const num2 = Number(elements[2]);
-  const operation = elements[1];
-
-  let result;
-  if (operation === '+') {
-    result = num1 + num2;
-  } else if (operation === '-') {
-    result = num1 - num2;
-  } else {
-    result = num1 * num2;
+  let answer;
+  switch (operations[operationNum]) {
+    case '+':
+      answer = num1 + num2;
+      break;
+    case '-':
+      answer = num1 - num2;
+      break;
+    case '*':
+      answer = num1 * num2;
+      break;
+    default:
   }
 
-  return String(result);
+  return GameEngine.cons(question, String(answer));
 };
 
 export default () => {
-  runGameEngine(getGameConditions, getQuestion, getCorrectAnswer);
+  GameEngine.run(gameConditions, setAnswerQuestion);
 };

@@ -1,14 +1,15 @@
-import runGameEngine from '..';
+import * as GameEngine from '..';
 import getRandom from '../utils';
 
 const isEven = number => number % 2 === 0;
 
-const getGameConditions = () => 'Answer "yes" if number even otherwise answer "no".\n';
+const gameConditions = 'Answer "yes" if number even otherwise answer "no".\n';
 
-const getQuestion = () => getRandom(10, 99);
-
-const getCorrectAnswer = number => (isEven(number) ? 'yes' : 'no');
+const setAnswerQuestion = () => {
+  const number = getRandom(10, 100);
+  return GameEngine.cons(number, isEven(number) ? 'yes' : 'no');
+};
 
 export default () => {
-  runGameEngine(getGameConditions, getQuestion, getCorrectAnswer);
+  GameEngine.run(gameConditions, setAnswerQuestion);
 };
