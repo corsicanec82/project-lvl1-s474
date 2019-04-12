@@ -16,7 +16,7 @@ $ sudo npm install -g sb-game
 $ brain-even
 ```
 
-[![asciicast](https://asciinema.org/a/LOOMnVfximmtgRK24kEevRESp.svg)](https://asciinema.org/a/LOOMnVfximmtgRK24kEevRESp)
+<script id="asciicast-LOOMnVfximmtgRK24kEevRESp" src="https://asciinema.org/a/LOOMnVfximmtgRK24kEevRESp.js" rows="20" async></script>
 ### Run game - Calc
 ```sh
 $ brain-calc
