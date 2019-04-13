@@ -1,7 +1,7 @@
 import runGameEngine from '..';
 import { getRandom, cons } from '../utils';
 
-const gameConditions = 'Find the greatest common divisor of given numbers.\n';
+const gameConditions = 'Find the greatest common divisor of given numbers.';
 
 export const getGreaterDivisor = (a, b) => {
   if (a === 0 || b === 0) {
@@ -12,7 +12,7 @@ export const getGreaterDivisor = (a, b) => {
   return getGreaterDivisor(greaterNum % lowerNum, lowerNum);
 };
 
-const gameData = () => {
+const getGameData = () => {
   const num1 = getRandom(2, 101);
   const num2 = getRandom(2, 101);
   const gcd = getGreaterDivisor(num1, num2);
@@ -20,9 +20,9 @@ const gameData = () => {
   const question = `${num1} ${num2}`;
   const answer = String(gcd);
 
-  return gcd !== 1 ? cons(question, answer) : gameData();
+  return cons(question, answer);
 };
 
 export default () => {
-  runGameEngine(gameConditions, gameData);
+  runGameEngine(gameConditions, getGameData);
 };

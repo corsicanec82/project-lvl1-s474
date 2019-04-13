@@ -1,11 +1,11 @@
 import runGameEngine from '..';
 import { getRandom, cons } from '../utils';
 
-const gameConditions = 'What number is missing in the progression?\n';
+const gameConditions = 'What number is missing in the progression?';
 
 const lengthProgression = 10;
 
-const gameData = () => {
+const getGameData = () => {
   const indexHiddenNumber = getRandom(0, lengthProgression - 1);
   const stepProgression = getRandom(2, 16);
   const firstElement = getRandom(1, 25);
@@ -23,5 +23,5 @@ const gameData = () => {
 };
 
 export default () => {
-  runGameEngine(gameConditions, gameData);
+  runGameEngine(gameConditions, getGameData);
 };

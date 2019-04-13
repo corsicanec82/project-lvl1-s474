@@ -1,9 +1,9 @@
 import runGameEngine from '..';
 import { getRandom, cons } from '../utils';
 
-const gameConditions = 'Answer "yes" if given number is prime. Otherwise answer "no".\n';
+const gameConditions = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-const isPrime = (num) => {
+export const isPrime = (num) => {
   if (num < 2) {
     return false;
   }
@@ -17,7 +17,7 @@ const isPrime = (num) => {
   return true;
 };
 
-const gameData = () => {
+const getGameData = () => {
   const question = getRandom(2, 100);
   const answer = isPrime(question) ? 'yes' : 'no';
 
@@ -25,5 +25,5 @@ const gameData = () => {
 };
 
 export default () => {
-  runGameEngine(gameConditions, gameData);
+  runGameEngine(gameConditions, getGameData);
 };

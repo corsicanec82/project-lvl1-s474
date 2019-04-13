@@ -3,16 +3,16 @@ import { car, cdr } from './utils';
 
 const numberOfQuestions = 3;
 
-export default (gameConditions, gameData) => {
+export default (gameConditions, getGameData) => {
   console.log('Welcome to the Brain Games!');
   console.log(gameConditions);
-  const userName = readlineSync.question('May I have your name? ');
+  const userName = readlineSync.question('\nMay I have your name? ');
   console.log(`Hello, ${userName}!`);
 
   for (let i = 0; i < numberOfQuestions; i += 1) {
-    const AnswerQuestion = gameData();
-    const question = car(AnswerQuestion);
-    const correctAnswer = cdr(AnswerQuestion);
+    const AnswerAndQuestion = getGameData();
+    const question = car(AnswerAndQuestion);
+    const correctAnswer = cdr(AnswerAndQuestion);
 
     console.log(`\nQuestion: ${question}`);
     const answer = readlineSync.question('Your answer: ');
