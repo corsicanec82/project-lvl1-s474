@@ -6,7 +6,7 @@ node_js:
 
 script:
   - make lint
-  - make test
+  - make test-coverage
 
 env:
   - secure: "nAioZt7AhrYwshKEU+HNfTdx0YvlPAUjtAB9pZo5g3pGluP7HikR7xYIbg8LBrWMGZA9D+DhNAxmjZAAVeZFCggQjXefjoNHhG1ezgDLSpbQwJaiNVXpuWdXr+Rg02BqpM79G8t7WbHkZG9rRDlAn7w9RYW+sGkMnQlYSzUJciwNiSwPxa6QCly3ElkdGlO9cyZ7+JJorA0XWcdUlhEAv1FEDbWfnHEoF4e4dMfKj9qqUenD12BPVNYBMtnqMBm5Fb6MvaaTAKvtXPNeUP+D0xj/7zU6YvDl/MeokF/H5lLIuHyzU2PdtqYOmnUxjqZYLCiOMxPcxoX8xH5n7zT3tfK19sk+xjNQQ9ptY5gmVsTmSO8JENL3B8yYTEubEq5DhzqVHm2xNdtlesrUv6A0cjR2HO6S2FMtG2yx3IyC/Yi0y3XEOziF8cp0UCNJrOw5Q/RJpLvrxEg/gkUUd0+DbW/RO6CUS+f4j2koaVdcHqIocB3fBCWNWzF2PqPHkpfA7r/SrQ2WfTUhY/O4vRKPQDVHMUWwrFdsb6sOMISbgar4fug3yheQBK0Iu3lLeAOYg7HzfGk2CsetQIak4EfmcXDaT0gUGQ31YMfZN1bMbP4WTTWBIGVzZHak//Zu5bNNFQBSwc3YBl4dQeF62IOmvXNnOBitzo6Y4Ilg9WdkhRs="
@@ -18,4 +18,3 @@ before_script:
 
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
-  
