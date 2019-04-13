@@ -21,7 +21,7 @@ export const calculate = (a, b, operator) => {
 const getGameData = () => {
   const num1 = getRandom(1, 25);
   const num2 = getRandom(1, 25);
-  const indexOperation = getRandom(0, operators.length);
+  const indexOperation = getRandom(0, operators.length - 1);
   const operator = operators[indexOperation];
 
   const question = `${num1} ${operator} ${num2}`;

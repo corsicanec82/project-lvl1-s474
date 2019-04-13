@@ -7,7 +7,7 @@ const lengthProgression = 10;
 
 const getGameData = () => {
   const indexHiddenNumber = getRandom(0, lengthProgression - 1);
-  const stepProgression = getRandom(2, 16);
+  const stepProgression = getRandom(2, 15);
   const firstElement = getRandom(1, 25);
 
   let progression = '';
