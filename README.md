@@ -10,7 +10,7 @@
 ```sh
 $ sudo npm install -g sb-game
 ```
-
+<asciinema-player src="asciicast-1C7ry89ykUn52hKVAea7Hcncp"></asciinema-player>
 ### Run game - Even
 ```sh
 $ brain-even
@@ -41,4 +41,3 @@ $ brain-prime
 ```
 
 [![asciicast](https://asciinema.org/a/1C7ry89ykUn52hKVAea7Hcncp.svg)](https://asciinema.org/a/1C7ry89ykUn52hKVAea7Hcncp)
-<asciinema-player src="asciicast-1C7ry89ykUn52hKVAea7Hcncp"></asciinema-player>
