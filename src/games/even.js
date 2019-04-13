@@ -1,7 +1,7 @@
 import runGameEngine from '..';
 import { getRandom, cons } from '../utils';
 
-const isEven = number => number % 2 === 0;
+export const isEven = number => number % 2 === 0;
 
 const gameConditions = 'Answer "yes" if number even otherwise answer "no".\n';
 

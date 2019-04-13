@@ -3,7 +3,7 @@ import { getRandom, cons } from '../utils';
 
 const gameConditions = 'Find the greatest common divisor of given numbers.\n';
 
-const getGreaterDivisor = (a, b) => {
+export const getGreaterDivisor = (a, b) => {
   if (a === 0 || b === 0) {
     return a + b;
   }
