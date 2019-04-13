@@ -1,11 +1,11 @@
-import * as GameEngine from '..';
-import getRandom from '../utils';
+import runGameEngine from '..';
+import { getRandom, cons } from '../utils';
 
 const gameConditions = 'What is the result of the expression?\n';
 
 const operations = '+-*';
 
-const setAnswerQuestion = () => {
+const gameData = () => {
   const num1 = getRandom(1, 25);
   const num2 = getRandom(1, 25);
   const operationNum = getRandom(0, operations.length);
@@ -25,9 +25,9 @@ const setAnswerQuestion = () => {
     default:
   }
 
-  return GameEngine.cons(question, String(answer));
+  return cons(question, String(answer));
 };
 
 export default () => {
-  GameEngine.run(gameConditions, setAnswerQuestion);
+  runGameEngine(gameConditions, gameData);
 };

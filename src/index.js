@@ -1,20 +1,16 @@
 import readlineSync from 'readline-sync';
-
-export const cons = (x, y) => f => f(x, y);
-const car = pair => pair(x => x);
-const cdr = pair => pair((x, y) => y);
+import { car, cdr } from './utils';
 
 const numberOfQuestions = 3;
 
-// game engine
-export const run = (gameConditions, getAnswerQuestion) => {
+export default (gameConditions, gameData) => {
   console.log('Welcome to the Brain Games!');
   console.log(gameConditions);
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
 
   for (let i = 0; i < numberOfQuestions; i += 1) {
-    const AnswerQuestion = getAnswerQuestion();
+    const AnswerQuestion = gameData();
     const question = car(AnswerQuestion);
     const correctAnswer = cdr(AnswerQuestion);
 
