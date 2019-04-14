@@ -10,9 +10,9 @@ export default (gameConditions, getGameData) => {
   console.log(`Hello, ${userName}!`);
 
   for (let i = 0; i < numberOfQuestions; i += 1) {
-    const AnswerAndQuestion = getGameData();
-    const question = car(AnswerAndQuestion);
-    const correctAnswer = cdr(AnswerAndQuestion);
+    const answerAndQuestion = getGameData();
+    const question = car(answerAndQuestion);
+    const correctAnswer = cdr(answerAndQuestion);
 
     console.log(`\nQuestion: ${question}`);
     const answer = readlineSync.question('Your answer: ');

@@ -14,7 +14,7 @@ export const calculate = (a, b, operator) => {
     case '*':
       return a * b;
     default:
-      return false;
+      return '';
   }
 };
 

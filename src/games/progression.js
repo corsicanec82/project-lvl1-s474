@@ -12,8 +12,8 @@ const getGameData = () => {
 
   let progression = '';
   for (let i = 0; i < lengthProgression; i += 1) {
-    const nexElement = i === indexHiddenNumber ? '.. ' : `${firstElement + i * stepProgression} `;
-    progression = `${progression}${nexElement}`;
+    const nextElement = i === indexHiddenNumber ? '.. ' : `${firstElement + i * stepProgression} `;
+    progression = `${progression}${nextElement}`;
   }
 
   const question = progression;

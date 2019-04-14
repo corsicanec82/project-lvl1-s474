@@ -15,10 +15,9 @@ export const getGreaterDivisor = (a, b) => {
 const getGameData = () => {
   const num1 = getRandom(2, 101);
   const num2 = getRandom(2, 101);
-  const gcd = getGreaterDivisor(num1, num2);
 
   const question = `${num1} ${num2}`;
-  const answer = String(gcd);
+  const answer = String(getGreaterDivisor(num1, num2));
 
   return cons(question, answer);
 };

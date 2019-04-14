@@ -1,4 +1,3 @@
-/** returns a random integer number between min and max */
 export const getRandom = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
 export const cons = (x, y) => f => f(x, y);
