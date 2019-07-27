@@ -1,6 +1,6 @@
 {
   "name": "sb-game",
-  "version": "2.3.7",
+  "version": "2.3.8",
   "description": "Simple brain game",
   "main": "",
   "keywords": [
@@ -38,17 +38,17 @@
     "readline-sync": "^1.4.9"
   },
   "devDependencies": {
-    "@babel/cli": "^7.4.3",
-    "@babel/core": "^7.4.3",
-    "@babel/node": "^7.2.2",
-    "@babel/preset-env": "^7.4.3",
-    "babel-eslint": "^10.0.1",
-    "babel-jest": "^24.7.1",
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/node": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "babel-eslint": "^10.0.2",
+    "babel-jest": "^24.8.0",
     "eslint": "^5.16.0",
-    "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.16.0",
-    "eslint-plugin-jest": "^22.4.1",
-    "jest": "^24.7.1",
-    "jest-cli": "^24.7.1"
+    "eslint-config-airbnb-base": "^13.2.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jest": "^22.14.0",
+    "jest": "^24.8.0",
+    "jest-cli": "^24.8.0"
   }
 }
