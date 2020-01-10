@@ -33,6 +33,9 @@ jobs:
           CC_TEST_REPORTER_ID: 5a2eacf978b809fc79175fcdeb7758d6d14cbcbf5ed6759416968a6ce5f1ea8a
         with:
           coverageCommand: make test-coverage
+      - uses: codecov/codecov-action@v1
+        with:
+          token: 4f61c6b2-1f73-4780-b19b-aa3e0430d1df
 
   checkCodeStyle:
     name: check/codestyle
