@@ -3,8 +3,9 @@
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/a939e57ff2f3cf58499a/maintainability)](https://codeclimate.com/github/corsicanec82/project-lvl1-s474/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/a939e57ff2f3cf58499a/test_coverage)](https://codeclimate.com/github/corsicanec82/project-lvl1-s474/test_coverage)
+[![code quality](https://api.codacy.com/project/badge/Grade/cd3526248fb34e56a832ae2ba42a8f95)](https://www.codacy.com/manual/corsicanec82/project-lvl1-s474?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=corsicanec82/project-lvl1-s474&amp;utm_campaign=Badge_Grade)
 ![](https://github.com/corsicanec82/project-lvl1-s474/workflows/workflow/badge.svg)
-[![codecov](https://codecov.io/gh/corsicanec82/project-lvl1-s474/branch/master/graph/badge.svg)](https://codecov.io/gh/corsicanec82/project-lvl1-s474)
+[![test coverage](https://codecov.io/gh/corsicanec82/project-lvl1-s474/branch/master/graph/badge.svg)](https://codecov.io/gh/corsicanec82/project-lvl1-s474)
 [![npm version](https://badge.fury.io/js/sb-game.svg)](https://badge.fury.io/js/sb-game)
 
 ## Install
