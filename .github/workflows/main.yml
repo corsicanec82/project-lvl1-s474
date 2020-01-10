@@ -3,34 +3,45 @@ name: workflow
 on: [push]
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-
+  test:
     strategy:
       matrix:
         node-version: [8.x, 10.x, 12.x]
 
-    steps:
-    - uses: actions/checkout@v1
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-    - name: Install dependencies
-      run: make install
-    - name: Run tests
-      run: make test-coverage
-
-  checkCodeStyle:
+    name: test/node ${{ matrix.node-version }}
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v1
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: make install
+      - run: make test
+
+  coverage:
+    needs: [test]
+    name: coverage
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+      with:
+        node-version: 12.x
+      - run: make install
+      - uses: paambaati/codeclimate-action@v2.2.4
+        env:
+          CC_TEST_REPORTER_ID: 5a2eacf978b809fc79175fcdeb7758d6d14cbcbf5ed6759416968a6ce5f1ea8a
+        with:
+          make test-coverage
+
+  checkCodeStyle:
+    name: check/codestyle
+    runs-on: ubuntu-latest
+      steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
         with:
           node-version: 8.x
-      - name: Install and check codestyle
-        run: |
+      - run: |
           make install
           make lint
