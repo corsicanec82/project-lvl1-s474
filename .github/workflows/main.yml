@@ -32,7 +32,7 @@ jobs:
         env:
           CC_TEST_REPORTER_ID: 5a2eacf978b809fc79175fcdeb7758d6d14cbcbf5ed6759416968a6ce5f1ea8a
         with:
-          make test-coverage
+          coverageCommand: make test-coverage
 
   checkCodeStyle:
     name: check/codestyle
