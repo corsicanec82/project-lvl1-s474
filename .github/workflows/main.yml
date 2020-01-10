@@ -28,7 +28,7 @@ jobs:
         with:
           node-version: 12.x
       - run: make install
-      - uses: paambaati/codeclimate-action@v2.2.4
+      - uses: paambaati/codeclimate-action@v2.4.0
         env:
           CC_TEST_REPORTER_ID: 5a2eacf978b809fc79175fcdeb7758d6d14cbcbf5ed6759416968a6ce5f1ea8a
         with:
