@@ -19,26 +19,6 @@ test('isPrime(5) should return true', () => {
   expect(isPrime(5)).toBe(true);
 });
 
-test('isPrime(4) should return false', () => {
-  expect(isPrime(4)).toBe(false);
-});
-
-test('isPrime(1) should return false', () => {
-  expect(isPrime(1)).toBe(false);
-});
-
 test('12 * 7 should return 84', () => {
   expect(calculate(12, 7, '*')).toBe(84);
-});
-
-test('12 - 7 should return 5', () => {
-  expect(calculate(12, 7, '-')).toBe(5);
-});
-
-test('12 + 7 should return 19', () => {
-  expect(calculate(12, 7, '+')).toBe(19);
-});
-
-test('12 / 7 should return empty string', () => {
-  expect(calculate(12, 7, '/')).toBe('');
 });
