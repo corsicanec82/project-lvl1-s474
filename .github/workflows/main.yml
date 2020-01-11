@@ -61,7 +61,7 @@ jobs:
         uses: EndBug/version-check@v1.1.0
       - if: steps.check.outputs.changed == 'true'
         env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
           make install
           make publish
