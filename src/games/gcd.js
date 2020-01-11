@@ -4,12 +4,11 @@ import { getRandom, cons } from '../utils';
 const gameConditions = 'Find the greatest common divisor of given numbers.';
 
 export const getGreaterDivisor = (a, b) => {
-  if (a === 0 || b === 0) {
-    return a + b;
+  if (b === 0) {
+    return a;
   }
-  const greaterNum = a > b ? a : b;
-  const lowerNum = a + b - greaterNum;
-  return getGreaterDivisor(greaterNum % lowerNum, lowerNum);
+
+  return getGreaterDivisor(b, a % b);
 };
 
 const getGameData = () => {
