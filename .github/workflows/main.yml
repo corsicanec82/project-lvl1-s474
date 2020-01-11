@@ -58,6 +58,9 @@ jobs:
         with:
           node-version: 12.x
       - run: make install
-      - uses: pascalgn/npm-publish-action@51fdb4531e99aac1873764ef7271af448dc42ab4
-        env:
-          NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - id: check
+        uses: EndBug/version-check@v1.1.0
+      - if: steps.check.outputs.changed == 'true'
+        run: |
+          npm config set //registry.npmjs.org/:_authToken ${{ secrets.NPM_TOKEN }}
+          npm publish
