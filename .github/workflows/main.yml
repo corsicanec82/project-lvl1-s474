@@ -59,4 +59,4 @@ jobs:
         with:
           node-version: 8.x
       - uses: mikeal/merge-release@master
-        run: echo 'xz'
+        with: echo 'xz'
