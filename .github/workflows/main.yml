@@ -62,5 +62,6 @@ jobs:
       - if: steps.check.outputs.changed == 'true'
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: make install
-        run: make publish
+        run: |
+          make install
+          make publish
