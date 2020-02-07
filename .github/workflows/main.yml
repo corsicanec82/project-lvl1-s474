@@ -6,7 +6,7 @@ jobs:
   test:
     strategy:
       matrix:
-        node-version: [8.x, 10.x, 12.x]
+        node-version: [12.x, 'latest']
 
     name: test/node ${{ matrix.node-version }}
     runs-on: ubuntu-latest
@@ -18,49 +18,49 @@ jobs:
       - run: make install
       - run: make test
 
-  coverage:
-    needs: [test]
-    name: test coverage
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 12.x
-      - run: make install
-      - uses: paambaati/codeclimate-action@v2.4.0
-        env:
-          CC_TEST_REPORTER_ID: ${{ secrets.CODECLIMATE_TEST_REPORTER_ID }}
-        with:
-          coverageCommand: make test-coverage
-      - uses: codecov/codecov-action@v1
-        with:
-          token: ${{ secrets.CODECOV_TEST_REPORTER_ID }}
+  # coverage:
+  #   needs: [test]
+  #   name: test coverage
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #     - uses: actions/setup-node@v1
+  #       with:
+  #         node-version: 12.x
+  #     - run: make install
+  #     - uses: paambaati/codeclimate-action@v2.4.0
+  #       env:
+  #         CC_TEST_REPORTER_ID: ${{ secrets.CODECLIMATE_TEST_REPORTER_ID }}
+  #       with:
+  #         coverageCommand: make test-coverage
+  #     - uses: codecov/codecov-action@v1
+  #       with:
+  #         token: ${{ secrets.CODECOV_TEST_REPORTER_ID }}
 
-  checkCodeStyle:
-    name: check codestyle
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 12.x
-      - run: make install
-      - run: make lint
+  # checkCodeStyle:
+  #   name: check codestyle
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #     - uses: actions/setup-node@v1
+  #       with:
+  #         node-version: 12.x
+  #     - run: make install
+  #     - run: make lint
 
-  publish:
-    needs: [test]
-    name: publish to npm
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@master
-      - uses: actions/setup-node@master
-        with:
-          node-version: 12.x
-      - run: make install
-      - id: check
-        uses: EndBug/version-check@v1.1.0
-      - if: steps.check.outputs.changed == 'true'
-        run: |
-          npm config set //registry.npmjs.org/:_authToken ${{ secrets.NPM_TOKEN }}
-          npm publish
+  # publish:
+  #   needs: [test]
+  #   name: publish to npm
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@master
+  #     - uses: actions/setup-node@master
+  #       with:
+  #         node-version: 12.x
+  #     - run: make install
+  #     - id: check
+  #       uses: EndBug/version-check@v1.1.0
+  #     - if: steps.check.outputs.changed == 'true'
+  #       run: |
+  #         npm config set //registry.npmjs.org/:_authToken ${{ secrets.NPM_TOKEN }}
+  #         npm publish
