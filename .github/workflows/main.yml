@@ -6,7 +6,7 @@ jobs:
   test:
     strategy:
       matrix:
-        node-version: [12.x, 'latest']
+        node-version: [12.x, '>12.x']
 
     name: test/node ${{ matrix.node-version }}
     runs-on: ubuntu-latest
